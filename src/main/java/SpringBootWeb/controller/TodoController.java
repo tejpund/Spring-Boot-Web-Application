@@ -1,10 +1,12 @@
-package com.in28minutes.springboot.web.controller;
+package SpringBootWeb.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.validation.Valid;
 
+import SpringBootWeb.model.Todo;
+import SpringBootWeb.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,14 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.in28minutes.springboot.web.model.Todo;
-import com.in28minutes.springboot.web.service.TodoService;
-
 @Controller
 public class TodoController {
 
 	@Autowired
-	TodoService service;
+    TodoService service;
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
